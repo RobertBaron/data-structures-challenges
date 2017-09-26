@@ -1,0 +1,30 @@
+{
+  "name": "data-structures-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2d-array.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertBaron/data-structures-challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertBaron/data-structures-challenges/issues"
+  },
+  "homepage": "https://github.com/RobertBaron/data-structures-challenges#readme",
+  "dependencies": {
+    "chai": "4.1.2",
+    "mocha": "3.5.3"
+  },
+  "devDependencies": {
+    "sinon": "3.3.0"
+  }
+}
