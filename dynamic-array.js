@@ -3,9 +3,9 @@ class DynamicArray {
 
     this.N = N
     this.Q = Q
+    this.key = 's'
 
-    this.s1 = []
-    this.s2 = []
+    this.structure = {};
     this.lastAnswer = 0;
   }
 
@@ -29,19 +29,15 @@ class DynamicArray {
     if(!list) {
       return
     }
-    this.getSequence(seq).push(y)
+    list.push(y)
   }
 
   getSequence(seq) {
-    if(seq === 0) {
-      return this.s1
+    if(!this.structure[`${this.key}${seq}`]) {
+      return this.structure[`${this.key}${seq}`] = []
     }
 
-    if(seq === 1) {
-      return this.s2
-    }
-
-    return
+    return this.structure[`${this.key}${seq}`]
   }
 
   findValue(seq, y) {
@@ -54,7 +50,7 @@ class DynamicArray {
     const value = this.findValue(seq, y)
     this.lastAnswer = value
 
-    //console.log(this.lastAnswer)
+    console.log(this.lastAnswer)
     return this.lastAnswer;
   }
 }

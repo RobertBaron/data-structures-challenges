@@ -18,8 +18,15 @@ describe('dynamic array', () => {
     expect(dynamicArray.N).to.be.equal(2)
     expect(dynamicArray.Q).to.be.equal(5)
 
-    expect(dynamicArray.s1.length).to.be.equal(0)
-    expect(dynamicArray.s2.length).to.be.equal(0)
+    expect(dynamicArray.structure).to.not.be.undefined
+  });
+
+  it('should get sequence list', function () {
+    const dynamicArray = new DynamicArray(2, 5)
+
+    expect(dynamicArray.getSequence(0)).to.be.eql([])
+    expect(dynamicArray.getSequence(2)).to.be.eql([])
+    expect(dynamicArray.getSequence(32)).to.be.eql([])
   });
 
   it('should find sequence', () => {
@@ -60,19 +67,10 @@ describe('dynamic array', () => {
     const y = 5
     dynamicArray.query(queryType, x, y)
 
-    expect(dynamicArray.s1[0]).to.be.equal(y)
+    expect(dynamicArray.structure[`${dynamicArray.key}0`]).to.be.eql([y])
 
     dynamicArray.query(queryType, 1, 7)
-    expect(dynamicArray.s2[0]).to.be.equal(7)
-  });
-
-  it('should get sequence list', function () {
-    const dynamicArray = new DynamicArray(2, 5)
-    dynamicArray.s1.push(1)
-    dynamicArray.s2.push(2)
-
-    expect(dynamicArray.getSequence(0)).to.be.eql(dynamicArray.s1)
-    expect(dynamicArray.getSequence(1)).to.be.eql(dynamicArray.s2)
+    expect(dynamicArray.structure[`${dynamicArray.key}1`]).to.be.eql([7])
   });
 
   it('should find value of element y % size', function () {
@@ -109,7 +107,7 @@ describe('dynamic array', () => {
   });
 
   describe('test', () => {
-    xit('should pass big test', function () {
+    it('should pass big test', function () {
       const expectedTest = expected.split('\n');
 
       const inputTest = input.split('\n');
@@ -130,7 +128,7 @@ describe('dynamic array', () => {
 
         dynamicArray.query(query.Q, query.x, query.y)
         if(query.Q === 2) {
-          expect(dynamicArray.lastAnswer).to.be.equal(expectedTest[expectedLine])
+          expect(dynamicArray.lastAnswer).to.be.equal(parseInt(expectedTest[expectedLine]))
 
           expectedLine++
         }
