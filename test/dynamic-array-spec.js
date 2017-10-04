@@ -2,8 +2,8 @@ const expect    = require("chai").expect
 const sinon = require("sinon")
 const DynamicArray = require('../dynamic-array')
 
-const input = require('./input')
-const expected = require('./expected')
+const input = require('./dynamic-array-data/input')
+const expected = require('./dynamic-array-data/expected')
 
 describe('dynamic array', () => {
 
