@@ -50,7 +50,6 @@ class DynamicArray {
     const value = this.findValue(seq, y)
     this.lastAnswer = value
 
-    console.log(this.lastAnswer)
     return this.lastAnswer;
   }
 }

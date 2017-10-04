@@ -1,7 +1,7 @@
 const expect    = require("chai").expect
 const LeftRotation = require('../left-rotation')
 
-describe.only('left rotation array', 
+describe('left rotation array', () => {
 
   it('should initialize properly', () => {
     expect(LeftRotation).to.not.be.undefined

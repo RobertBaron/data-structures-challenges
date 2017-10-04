@@ -41,11 +41,9 @@ function main() {
     }
   }
 
-
   function add(a, b) {
     return a + b;
   }
-
 
   function getSquare(i, h) {
     var m = arr[i].slice(h, h + 3);
@@ -53,7 +51,4 @@ function main() {
     var m3 = arr[i + 2].slice(h, h + 3);
     return m.reduce(add, 0) + m3.reduce(add, 0) + m2[1];
   }
-
-  console.log(max)
-
 }
